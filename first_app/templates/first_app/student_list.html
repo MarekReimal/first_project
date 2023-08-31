@@ -6,7 +6,7 @@
     {# student from views.py context_object_name= #}
     <ul>
         <!-- loop -->
-        {% for student in object_list %}
+        {% for student in students %} {# students tuleb view lehelt context_object_name = "students" #}
             <li>
                 {{ student.name }}
                 [<a href="/first_app/student_detail/{{ student.id }}">Detail</a>] {# need lähevad lingiks hiljem  #}

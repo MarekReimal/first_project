@@ -1,0 +1,15 @@
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:home' %}">Homepage</a>
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:teacher_list' %}">Teachers</a>
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:teacher_create' %}">Add Teacher</a>
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:student_list' %}">Students</a>
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:student_create' %}">Add Student</a>
+                      <a class="btn btn-outline-success me-2" href="{% url 'first_app:subject_list' %}">Subjects</a>
+                      <a class="btn btn-outline-success" href="{% url 'first_app:subject_create' %}">Add Subject</a>
+                  </div>
+            </div>
+      </div>
+    </nav>

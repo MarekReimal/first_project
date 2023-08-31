@@ -32,3 +32,11 @@ class StudentAdmin(admin.ModelAdmin):
 class TeacherAdmin(admin.ModelAdmin): # on kaks varianti kuidas kuvada
     list_display = ["name", "subject"]
 """
+
+class Subject(models.Model): # et tabel oleks admin lehel nätav, selleks vt ka admin.py ja tee migrationid
+    subject = models.CharField(max_length=50)
+    def __str__(self): # vajalik et kuvaks admin tabelis nimed õigesti
+        return self.subject
+
+class SubjectAdmin(admin.ModelAdmin):
+    list_display = ["subject"]

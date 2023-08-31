@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{# VAADE ÕPTAJA KUVAMISEKS #}
+
+{% block content %}
+	<h2>Teacher list</h2>
+    <p></p>
+    <p>There are {{ teachers.count }} teacher(s) in total</p>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Teacher</th>
+                <th>Subject</th>
+            </tr>
+        {% for t in teachers %}
+            <tr>
+                <td>{{ t.name }}</td> {# töötab ka <td>{{ t }}</td> kuna modelis on def __str__ mis loob stringi #}
+                <td>{{ t.subject }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock %}
