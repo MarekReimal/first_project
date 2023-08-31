@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Update {{ student.name }}</h1>
+    <form method="post">
+    {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Update" class="btn btn-success">
+    </form>
+
+        <p></p>
+        <p><a href="{% url 'first_app:student_list' %}">Student list</a></p>
+        <p><a href="{% url 'first_app:home' %}">Homepage</a></p>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Homepage</h1>
+    <p><a href="{% url 'first_app:student_list' %}">List all Students</a></p> {# avalehelt listi lehele #}
+    <p><a href="{% url 'first_app:student_create' %}">Add a new Student</a></p>
+{% endblock %}

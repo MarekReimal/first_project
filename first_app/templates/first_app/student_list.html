@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Student list</h1>
+    <a href="{% url 'first_app:home' %}">Homepage</a> {# teeb lingi listi alla- viib homepage #}
+    {# student from views.py context_object_name= #}
+    <ul>
+        <!-- loop -->
+        {% for student in object_list %}
+            <li>
+                {{ student.name }}
+                [<a href="/first_app/student_detail/{{ student.id }}">Detail</a>] {# need lähevad lingiks hiljem  #}
+                [<a href="/first_app/student_update/{{ student.id }}" class="text_success">Update</a>]
+                [<a href="/first_app/student_delete/{{ student.id }}" class="text-danger">Delete</a>] {# student_delete on viide urls.py name = ... #}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <ul class="pagination">
+        {# näitab nooli lehtedel liikumiseks #}
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1">&laquo;</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">&lsaquo;</a>
+            </li>
+        {% endif %}
+
+        {# näitab teksti lehtedel liikumiseks #}
+        <li class="page-link text-dark">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </li>
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">&rsaquo;</a> {# page_obj.next_page_number see on lehe numbri saamiseks #}
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?{{ page_obj.paginator.num_pages }}">&raquo;</a>
+            </li>
+        {% endif %}
+    </ul>
+
+{% endblock %}
