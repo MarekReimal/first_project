@@ -46,7 +46,7 @@ class StudentCreateView(CreateView):
     success_url = reverse_lazy("first_app:student_list")
 
 class SubjectCreateView(CreateView):
-    template_name = "first_app/subject_create.html"
+    template_name = "first_app/subject_form_create.html"
     model = Subject
     fields = "__all__"
     success_url = reverse_lazy("first_app:subject_list")
@@ -78,6 +78,6 @@ class StudentDeleteView(DeleteView):
     success_url = reverse_lazy("first_app:student_list")
 
 class SubjectDeleteView(DeleteView):
-    template_name = "first_app/subject_delete.html" # vajalik rida et kui ei kasuta standard põhja
+    template_name = "first_app/subject_confirm_delete.html"  # vajalik rida et kui ei kasuta standard põhja
     model = Subject
     success_url = reverse_lazy("first_app:subject_list")
