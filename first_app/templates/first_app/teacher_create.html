@@ -2,12 +2,14 @@
 
 {% block content %}
     <h2>Add Teacher</h2>
+    <p></p>
     <form method="post">
         {% csrf_token %} {# tekitab teksti rea #}
         {{ form.as_p }} {# vormindab vaate #}
         <input type="submit" value="Add Teacher" class="btn btn-primary">
     </form>
     <p></p>
+    <p><a href="{% url "first_app:teacher_list" %}">Teacher list</a></p>
     <p><a href="{% url 'first_app:home' %}">Homepage</a></p>
 
 {% endblock %}

@@ -9,7 +9,7 @@
         <input type="submit" value="Add Subject" class="btn btn-primary">
     </form>
     <p></p>
-    <p><a href="/first_app/student_list">Subject list</a></p> {# p on lõik, a on link #}
+    <p><a href={% url "first_app:subject_list" %}>Subject list</a></p> {# p on lõik, a on link #}
     <p><a href="{% url 'first_app:home' %}">Homepage</a></p>
 
 {% endblock %}

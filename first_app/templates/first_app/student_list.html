@@ -2,8 +2,10 @@
 
 {% block content %}
     <h1>Student list</h1>
+    <p></p>
     <a href="{% url 'first_app:home' %}">Homepage</a> {# teeb lingi listi alla- viib homepage #}
     {# student from views.py context_object_name= #}
+    <p></p>
     <ul>
         <!-- loop -->
         {% for student in students %} {# students tuleb view lehelt context_object_name = "students" #}
@@ -14,6 +16,7 @@
                 [<a href="/first_app/student_delete/{{ student.id }}" class="text-danger">Delete</a>] {# student_delete on viide urls.py name = ... #}
             </li>
         {% endfor %}
+
     </ul>
 
     <ul class="pagination">
