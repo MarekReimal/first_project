@@ -39,7 +39,7 @@
                 <a class="page-link" href="?page={{ page_obj.next_page_number }}">&rsaquo;</a> {# page_obj.next_page_number see on lehe numbri saamiseks #}
             </li>
             <li class="page-item">
-                <a class="page-link" href="?{{ page_obj.paginator.num_pages }}">&raquo;</a>
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
             </li>
         {% endif %}
     </ul>
